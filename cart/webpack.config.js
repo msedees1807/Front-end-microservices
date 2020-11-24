@@ -12,7 +12,13 @@ module.exports = {
       name: "cart",
       filename: "remoteEntry.js",
       exposes: {
-        "./CartShow": "./src/index.js",
+        "./CartShow": "./src/bootstrap.js",
+      },
+      //singleton true means only one version of faker can be used / shared
+      shared: {
+        faker: {
+          singleton: true,
+        },
       },
     }),
     new HWP({

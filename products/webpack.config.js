@@ -16,7 +16,12 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         // These alises filenames
-        "./ProductsIndex": "./src/index",
+        "./ProductsIndex": "./src/bootstrap.js",
+      },
+      shared: {
+        faker: {
+          singleton: true,
+        },
       },
     }),
     new HtmlWebpackPlugin({
